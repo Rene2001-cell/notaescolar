@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Usuarios;
+
 class AdminUsersController extends Controller
 {
     /**
@@ -13,7 +15,10 @@ class AdminUsersController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index');
+
+        $users=Usuarios::all();
+
+        return view('admin.users.index',compact('users'));
     }
 
     /**
