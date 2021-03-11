@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Usuarios;
+use App\Models\User;
 
 class AdminUsersController extends Controller
 {
@@ -40,6 +40,10 @@ class AdminUsersController extends Controller
     public function store(Request $request)
     {
         //
+
+
+       User::create ($request->all());
+
     }
 
     /**
