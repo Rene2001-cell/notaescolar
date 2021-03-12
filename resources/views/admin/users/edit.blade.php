@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>PAGINA PARA AGREGAR UN USUARIO</h1>
-{!! Form::open(['method' => 'POST','action'=>'App\Http\Controllers\AdminUsersController@store']) !!}
+{!! Form::model($user,['method' => 'PATCH','action'=>['App\Http\Controllers\AdminUsersController@update',$user->id]]) !!}
 
     <Table>
         <TR>
@@ -23,11 +23,7 @@
             <TD>{!!Form::label('email_verified_at', 'Veririficar correo:')!!}</TD>
             <TD> {!!Form::text('email_verified_at')!!}</TD>
         </TR>
-        <TR>
 
-            <TD>{!!Form::label('password', 'Clave:')!!}</TD>
-            <TD> {!!Form::password('password')!!}</TD>
-        </TR>
 
         <TR>
 
@@ -37,7 +33,7 @@
 
         <TR>
 
-            <TD>{!!Form::submit('Crea Usuario')!!}</TD>
+            <TD>{!!Form::submit('Modificar')!!}</TD>
             <TD> {!!Form::reset('Borrar')!!}</TD>
         </TR>
 
