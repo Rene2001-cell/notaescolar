@@ -16,7 +16,7 @@ class AdminUsersController extends Controller
     public function index()
     {
 
-        $users=Usuarios::all();
+        $users=User::all();
 
         return view('admin.users.index',compact('users'));
     }
@@ -43,6 +43,8 @@ class AdminUsersController extends Controller
 
 
        User::create ($request->all());
+
+       return view('admin.users.create');
 
     }
 
