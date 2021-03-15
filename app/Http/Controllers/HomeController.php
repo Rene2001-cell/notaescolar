@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Message;
 
 class HomeController extends Controller
 {
@@ -29,7 +30,12 @@ class HomeController extends Controller
     }
 
     public function store(Request $request){
+        Message::create([
+            'sender_id' => auth()->id(),
+            'recipient_id' => $request->recipient_id,
+            'body'=> $request->body,
+        ]);
 
-        return $request->all();
+        return back()->with('flash','Tu mensaje fue enviado');
     }
 }

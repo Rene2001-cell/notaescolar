@@ -17,7 +17,7 @@
                     <form action="{{ route('messages.store') }}" method="POST">
                         @csrf
                     <div class="form-group">
-                        <select name="user_id" class="form-control">
+                        <select name="recipient_id" class="form-control">
                             <option value="">Seleciona el usuario</option>
                                 @foreach ($users as $user)
                                 <option value="{{$user->id}}">{{$user->name}}</option>
