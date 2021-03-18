@@ -52,9 +52,11 @@
                                 </li>
                             @endif
                         @else
-                                <li><a href="/home">Enviar mensaje</a></li>
+                                <li><a href="">Enviar mensaje</a></li>
 
                                 <li><a href="#">Notificaciones<span class="badge">1</span></a></li>
+
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -77,8 +79,15 @@
                 </div>
             </div>
         </nav>
-
+        @if (session()->has('flash'))
+        <div class="container">
+            <div class="alert alert-success">{{session('flash')}}  </div>
+        </div>
+        @endif
         <main class="py-4">
+
+
+
             @yield('content')
         </main>
     </div>

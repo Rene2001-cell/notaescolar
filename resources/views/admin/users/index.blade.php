@@ -7,6 +7,14 @@
 </head>
 <body>
 
+    @if(Session::has('usuario_borrado'))
+
+       <p class="bg-aqua"> {{Session('usuario_borrado')}}</p>
+    @endif
+
+
+
+
 <h1 align=center>Esta es la pagina principal del administrador</h1>
 <br>
 <br>
